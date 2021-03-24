@@ -51,7 +51,8 @@ class MainAdapter(private val holderClickListener: HolderClickListener) :
 
         fun setPerson(person: Person) {
             this.person = person
-            viewBinding.name.text = person.name
+            //viewBinding.name.text = person.name
+            viewBinding.person = person
         }
     }
 
