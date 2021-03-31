@@ -13,15 +13,15 @@ import kr.co.mvvmsample.model.Person
 import kr.co.mvvmsample.viewmodel.MainViewModel
 import java.util.*
 
-class MainActivity : AppCompatActivity(), HolderClickListener {
+class MainActivity : BaseActivity(), HolderClickListener {
 
 
-    private lateinit var binding: ActivityMainBinding
+    private val binding by binding<ActivityMainBinding>(R.layout.activity_main)
     private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        //binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
