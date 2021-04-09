@@ -11,13 +11,14 @@ import kr.co.mvvmsample.R
 import kr.co.mvvmsample.databinding.ActivityMainBinding
 import kr.co.mvvmsample.model.Person
 import kr.co.mvvmsample.viewmodel.MainViewModel
+import org.koin.android.ext.android.inject
 import java.util.*
 
 class MainActivity : BaseActivity(), HolderClickListener {
 
 
     private val binding by binding<ActivityMainBinding>(R.layout.activity_main)
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,7 @@ class MainActivity : BaseActivity(), HolderClickListener {
             adapter = MainAdapter(this@MainActivity)
         }
 
-        viewModel = MainViewModel()
+        //viewModel = MainViewModel()
         binding.viewModel = viewModel
 
         viewModel.load()

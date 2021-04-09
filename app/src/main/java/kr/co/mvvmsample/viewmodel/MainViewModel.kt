@@ -15,20 +15,10 @@ class MainViewModel : BaseObservable(), Database.DatabaseListener {
         notifyChange()  //data binding refresh
     }
 
-    fun addPerson(person: Person) {
-        database.add(person)
-    }
+    fun addPerson(person: Person) = database.add(person)
+    fun removePerson(person: Person) = database.remove(person)
+    fun getItems(): List<Person> = items
 
-    fun removePerson(person: Person) {
-        database.remove(person)
-    }
-
-    fun getItems(): List<Person> {
-        return items
-    }
-
-    override fun onChanged() {
-        load()
-    }
+    override fun onChanged() = load()
 
 }
