@@ -1,6 +1,7 @@
 package kr.co.mvvmsample
 
 import android.app.Application
+import kr.co.mvvmsample.di.myModule
 import kr.co.mvvmsample.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -14,6 +15,7 @@ class MvvmApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@MvvmApplication)
+            modules(myModule)
             modules(viewModelModule)
         }
     }
